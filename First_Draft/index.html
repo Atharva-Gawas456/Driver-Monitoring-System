@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Drowsiness Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Driver Drowsiness Detection System</h1>
+            <p>Real-time monitoring using AI</p>
+        </header>
+
+        <div class="main-content">
+            <div class="video-container">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <div class="status-panel">
+                <div class="status-card" id="statusCard">
+                    <h2 id="status">INITIALIZING...</h2>
+                    <div class="ear-value">
+                        <span>Eye Aspect Ratio:</span>
+                        <span id="earValue">0.00</span>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Distraction Count</span>
+                        <span class="stat-value" id="distractionCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Drowsy Alerts</span>
+                        <span class="stat-value" id="drowsyCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Session Time</span>
+                        <span class="stat-value" id="sessionTime">0s</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">Start Monitoring</button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert" id="alert">
+            <div class="alert-content">
+                <h2>⚠️ DROWSINESS DETECTED!</h2>
+                <p>Please take a break</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
