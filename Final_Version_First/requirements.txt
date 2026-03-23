@@ -1,0 +1,54 @@
+# ============================================================
+# Driver Monitoring System - Requirements
+# ============================================================
+# Install: pip install -r requirements.txt
+# 
+# ⚠️  For model training: Google Colab (GPU) is strongly recommended.
+#     Local training is possible but will be significantly slower.
+# ============================================================
+
+# ─── Core ML / Detection ────────────────────────────────────
+ultralytics>=8.2.0         # YOLOv8 - training & inference
+torch>=2.0.0               # PyTorch (auto-installed with ultralytics)
+torchvision>=0.15.0        # Vision transforms
+
+# ─── Computer Vision ────────────────────────────────────────
+opencv-python>=4.9.0       # Webcam & video processing (use opencv-python-headless in servers)
+Pillow>=10.0.0             # Image processing
+
+# ─── Data & Visualization ───────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+PyYAML>=6.0
+
+# ─── Streamlit Web App ──────────────────────────────────────
+streamlit>=1.33.0
+plotly>=5.18.0             # Interactive charts in Streamlit
+
+# ─── Flask Web App ──────────────────────────────────────────
+flask>=3.0.0
+flask-cors>=4.0.0          # Cross-origin support for deployment
+
+# ─── Kaggle Dataset Download ────────────────────────────────
+kaggle>=1.6.0
+
+# ─── PDF Report Export (optional) ───────────────────────────
+fpdf2>=2.7.0               # PDF generation for session reports
+
+# ─── Deployment Utilities ───────────────────────────────────
+gunicorn>=21.2.0           # WSGI server for Flask production
+python-dotenv>=1.0.0       # Environment variable management
+
+# ============================================================
+# GPU Note:
+#   - For NVIDIA GPU: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#   - For CPU only:   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# Training Note:
+#   - Google Colab FREE:  ~45 min for 50 epochs (T4 GPU)
+#   - Google Colab Pro:   ~20 min for 50 epochs (A100 GPU)
+#   - Local with NVIDIA GPU: possible but slower than Colab Pro
+#   - Local CPU only:     ❌ Not recommended for training (hours per epoch)
+# ============================================================
