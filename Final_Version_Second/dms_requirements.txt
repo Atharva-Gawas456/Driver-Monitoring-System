@@ -1,0 +1,16 @@
+# Core
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+
+# Streamlit app
+streamlit>=1.32.0
+
+# Flask app
+flask>=3.0.0
+
+# Utilities
+Pillow>=10.0.0
+pygame>=2.5.2      # optional: local alarm sound (only needed for main.py)
